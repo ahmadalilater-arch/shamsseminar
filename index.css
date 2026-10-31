@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Vazirmatn', sans-serif;
+  --font-heading: 'Aref Ruqaa', 'Vazirmatn', serif;
+  --font-body: 'Vazirmatn', system-ui, sans-serif;
+  --font-serif: 'Aref Ruqaa', serif;
+
+  /* Institutional Solar Palette: Deep Celestial Navy, Warm Amber & Gold, Alabaster Parchment */
+  --color-paper: #FDFBF7;
+  --color-paper-muted: #F6F3EB;
+  --color-paper-border: #E8E2D4;
+
+  --color-navy-950: #060B14;
+  --color-navy-900: #0B1524;
+  --color-navy-850: #101E33;
+  --color-navy-800: #162944;
+  --color-navy-700: #1F385C;
+  --color-navy-600: #2B4E7E;
+
+  --color-slate-500: #596B82;
+  --color-slate-400: #7E8E9E;
+  --color-slate-300: #A8B4C0;
+
+  --color-solar-600: #92400E;
+  --color-solar-500: #B45309;
+  --color-solar-400: #D97706;
+  --color-solar-300: #F59E0B;
+  --color-solar-200: #FCD34D;
+  --color-solar-100: #FEF3C7;
+  --color-solar-50: #FFFBEB;
+}
+
+:root {
+  --paper: #FDFBF7;
+  --paper-muted: #F6F3EB;
+  --paper-border: #E8E2D4;
+
+  --navy-950: #060B14;
+  --navy-900: #0B1524;
+  --navy-850: #101E33;
+  --navy-800: #162944;
+  --navy-700: #1F385C;
+
+  --solar-600: #92400E;
+  --solar-500: #B45309;
+  --solar-400: #D97706;
+  --solar-300: #F59E0B;
+  --solar-200: #FCD34D;
+  --solar-100: #FEF3C7;
+  --solar-50: #FFFBEB;
+
+  --text-primary: #0B1524;
+  --text-secondary: #2C3E55;
+  --text-muted: #5E7086;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--paper);
+  color: var(--text-primary);
+}
+
+body {
+  font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+  line-height: 1.85;
+  background-color: #FDFBF7;
+  color: #0B1524;
+  overflow-x: hidden;
+}
+
+.font-heading {
+  font-family: 'Aref Ruqaa', 'Vazirmatn', serif;
+}
+
+.font-display {
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+.font-serif-quote {
+  font-family: 'Aref Ruqaa', serif;
+}
+
+/* Solar Golden Glows & Borders */
+.border-gold-subtle {
+  border: 1px solid rgba(180, 83, 9, 0.22);
+}
+
+.border-gold-glow {
+  border: 1px solid rgba(217, 119, 6, 0.45);
+  box-shadow: 0 0 20px -4px rgba(245, 158, 11, 0.25);
+}
+
+.solar-amber-gradient {
+  background: linear-gradient(135deg, #B45309 0%, #D97706 50%, #F59E0B 100%);
+}
+
+.celestial-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(232, 226, 212, 0.95);
+  box-shadow: 0 10px 30px -10px rgba(11, 21, 36, 0.06);
+}
+
+.celestial-card-dark {
+  background: rgba(11, 21, 36, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  box-shadow: 0 12px 35px -8px rgba(0, 0, 0, 0.4);
+}
+
+/* Islamic Arch Profile Mask */
+.arch-header {
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+
+/* Custom understated scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F6F3EB;
+}
+::-webkit-scrollbar-thumb {
+  background: #D2C9B6;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B45309;
+}

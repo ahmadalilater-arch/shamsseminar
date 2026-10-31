@@ -1,0 +1,6 @@
+{
+  "name": "مرکز توانمندسازی معلمان شمس",
+  "description": "وب‌سایت رسمی مرکز توانمندسازی معلمان شمس (مرکز شمس) - ارائه‌دهنده سمینارها و ورکشاپ‌های تخصصی برای معلمین و مدیران مکاتب افغانستان",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
