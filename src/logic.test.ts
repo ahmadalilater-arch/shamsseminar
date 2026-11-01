@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { toPersianDigits, makeSlots, nextBookableDays, toDateISO } from './date';
-import { isAfghanPhone } from './booking';
+import { toPersianDigits, makeSlots, nextBookableDays, toDateISO } from './lib/date';
+import { isAfghanPhone } from './lib/booking';
 
 test('toPersianDigits converts western digits to Persian digits correctly', () => {
   assert.equal(toPersianDigits(12345), '۱۲۳۴۵');
