@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { CONTENT, Language } from '../../content';
-import { Booking, saveBooking, isAfghanPhone } from '../../lib/booking';
-import { sendToSheet } from '../../lib/send';
+import { CONTENT, Language } from './content';
+import { Booking, saveBooking, isAfghanPhone } from './booking';
+import { sendToSheet, sendToFormspree } from './send';
 import { StepService } from './StepService';
 import { StepWho } from './StepWho';
 import { StepDate } from './StepDate';
@@ -16,6 +16,7 @@ interface StepperProps {
   preselectedAudience?: string;
   preselectedTopic?: string;
   onClearPreselections?: () => void;
+  onOpenPrivacy?: () => void;
 }
 
 export const Stepper: React.FC<StepperProps> = ({
@@ -23,6 +24,7 @@ export const Stepper: React.FC<StepperProps> = ({
   preselectedAudience,
   preselectedTopic,
   onClearPreselections,
+  onOpenPrivacy,
 }) => {
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -155,6 +157,7 @@ export const Stepper: React.FC<StepperProps> = ({
       });
 
       sendToSheet(saved).catch((err) => console.log('Sheets hook notice:', err));
+      sendToFormspree(saved).catch((err) => console.log('Formspree notice:', err));
       setCompletedBooking(saved);
     } catch (err: any) {
       setErrors({ form: err?.message || t.booking.errors.form });
@@ -330,6 +333,7 @@ export const Stepper: React.FC<StepperProps> = ({
                             onChange={updateFormData}
                             errors={errors}
                             currentLang={currentLang}
+                            onOpenPrivacy={onOpenPrivacy}
                           />
                         )}
                       </motion.div>

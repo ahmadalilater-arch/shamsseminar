@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowLeft, Calendar, Sparkles } from 'lucide-react';
 import { motion } from 'motion/react';
-import { CONTENT, Language } from '../content';
+import { CONTENT, Language } from './content';
 
 interface CtaBandProps {
   currentLang: Language;

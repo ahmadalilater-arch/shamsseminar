@@ -5,7 +5,7 @@ import { isAfghanPhone } from './booking';
 
 test('toPersianDigits converts western digits to Persian digits correctly', () => {
   assert.equal(toPersianDigits(12345), '۱۲۳۴۵');
-  assert.equal(toPersianDigits('0784996270'), '۰۷۸۴۹۹۶۲۷۰');
+  assert.equal(toPersianDigits('0700000000'), '۰۷۰۰۰۰۰۰۰۰');
   assert.equal(toPersianDigits('SH-1405'), 'SH-۱۴۰۵');
 });
 
@@ -32,9 +32,9 @@ test('toDateISO returns valid YYYY-MM-DD format', () => {
 });
 
 test('isAfghanPhone validates 07... numbers correctly', () => {
-  assert.equal(isAfghanPhone('0784996270'), true);
-  assert.equal(isAfghanPhone('+93784996270'), true);
-  assert.equal(isAfghanPhone('0093784996270'), true);
+  assert.equal(isAfghanPhone('0700000000'), true);
+  assert.equal(isAfghanPhone('+93700000000'), true);
+  assert.equal(isAfghanPhone('0093700000000'), true);
   assert.equal(isAfghanPhone('0799123456'), true);
   assert.equal(isAfghanPhone('0701234567'), true);
   
@@ -42,5 +42,5 @@ test('isAfghanPhone validates 07... numbers correctly', () => {
   assert.equal(isAfghanPhone('12345'), false);
   assert.equal(isAfghanPhone('0202201234'), false); // Kabul landline
   assert.equal(isAfghanPhone(''), false);
-  assert.equal(isAfghanPhone('0884996270'), false);
+  assert.equal(isAfghanPhone('0800000000'), false);
 });

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Sparkles, CheckCircle2, Compass, BookOpen, GraduationCap } from 'lucide-react';
-import { CONTENT, Language } from '../content';
+import { CONTENT, Language } from './content';
 
 interface WhyProps {
   currentLang: Language;

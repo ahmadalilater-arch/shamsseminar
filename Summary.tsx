@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Calendar, Building, Users, MapPin, ChevronDown, ChevronUp } from 'lucide-react';
-import { jalali, toPersianDigits } from '../../lib/date';
-import { CONTENT, Language } from '../../content';
+import { jalali, toPersianDigits } from './date';
+import { CONTENT, Language } from './content';
 
 export interface BookingFormData {
   service: string;

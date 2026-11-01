@@ -1,5 +1,5 @@
 import React from 'react';
-import { Language } from '../content';
+import { Language } from './content';
 
 interface SunLogoProps {
   className?: string;

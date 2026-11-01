@@ -12,7 +12,8 @@ export interface AppConfig {
     end: string;
     stepMin: number;
   };
-  sheetWebhookUrl: string; // Google Apps Script web app URL (optional)
+  sheetWebhookUrl: string;
+  formspreeEndpoint: string; // Google Apps Script web app URL (optional)
   social: {
     instagram: string;
     tiktok: string;
@@ -35,17 +36,18 @@ export const CONFIG: AppConfig = {
   brand: 'مرکز توانمندسازی معلمان شمس',
   short: 'مرکز شمس',
   proposalNote: 'طرح پیشنهادی برای وزارت معارف',
-  phone: '0784996270',
-  whatsapp: '93784996270',
+  phone: '۰۷۰۰۰۰۰۰۰۰',
+  whatsapp: '93700000000',
   address: 'کابل، افغانستان',
-  hours: 'شنبه تا پنج‌شنبه، ۰۹:۰۰ الی ۱۶:۰۰ (جمعه رخصتی)',
+  hours: 'شنبه تا پنج‌شنبه، ۰۹:۰۰ الی ۱۶:۰۰',
   email: 'info@shams-center.af',
   slot: {
     start: '09:00',
     end: '15:30',
     stepMin: 30,
   },
-  sheetWebhookUrl: '', // URL وب‌هوک Google Apps Script برای ثبت خودکار در شیت
+  sheetWebhookUrl: '',
+  formspreeEndpoint: '', // URL وب‌هوک Google Apps Script برای ثبت خودکار در شیت
   social: {
     instagram: 'https://instagram.com',
     tiktok: '',
@@ -77,19 +79,19 @@ export const CONFIG: AppConfig = {
     },
     {
       id: 'member-2',
-      name: 'استاد رحیمی (نام نمونه)',
+      name: 'استاد رحیمی',
       role: 'ترینر ارشد روش‌های نوین تدریس',
       initials: 'ا.ر',
       bio: 'سابقه تدریس و برگزاری ده‌ها دوره آموزشی در حوزه مدیریت صنف، روانشناسی یادگیری و تدریس فعال.',
-      badge: 'به‌زودی تکمیل می‌شود',
+      badge: 'روش‌های تدریس',
     },
     {
       id: 'member-3',
-      name: 'استاد احمدی (نام نمونه)',
+      name: 'استاد احمدی',
       role: 'متخصص منجمنت و نظارت آموزشی',
       initials: 'ا.ا',
       bio: 'کارشناس ارشد مدیریت تعلیمی با تمرکز بر حل چالش‌های اداری، توانمندسازی سرمعلمین و تدوین شاخص‌های ارزیابی.',
-      badge: 'به‌زودی تکمیل می‌شود',
+      badge: 'نظارت و رهبری',
     },
   ],
   adminPasscode: 'shams1405',

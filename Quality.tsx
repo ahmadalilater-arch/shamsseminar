@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { CheckSquare, ShieldCheck, TrendingUp, Award, CheckCircle2, ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
-import { CONTENT, Language } from '../content';
+import { CONTENT, Language } from './content';
 
 interface QualityProps {
   currentLang: Language;

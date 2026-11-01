@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, HelpCircle, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CONTENT, Language } from '../content';
+import { CONTENT, Language } from './content';
 
 interface FaqProps {
   currentLang: Language;

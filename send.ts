@@ -1,4 +1,4 @@
-import { CONFIG } from '../config';
+import { CONFIG } from './config';
 import { Booking } from './booking';
 import { jalali } from './date';
 
@@ -6,6 +6,46 @@ import { jalali } from './date';
  * Sends booking payload to Google Apps Script Web App webhook (if configured).
  * Uses text/plain and mode: 'no-cors' to prevent CORS preflight blocks.
  */
+
+/**
+ * Sends booking payload to Formspree endpoint (if configured).
+ * Gracefully handled in background so UI submission is not blocked.
+ */
+export async function sendToFormspree(b: Booking): Promise<boolean> {
+  if (!CONFIG.formspreeEndpoint) {
+    return false;
+  }
+  try {
+    const res = await fetch(CONFIG.formspreeEndpoint, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        tracking_code: b.code,
+        service: b.service,
+        audience: b.audience,
+        school: b.school,
+        city: b.city,
+        participants: b.participants,
+        mode: b.mode,
+        date: b.dateISO,
+        time: b.time,
+        contact_name: b.name,
+        contact_phone: b.phone,
+        has_whatsapp: b.hasWhatsapp ? 'Yes' : 'No',
+        note: b.note || '',
+        created_at: b.createdAt,
+      }),
+    });
+    return res.ok;
+  } catch (err) {
+    console.warn('Formspree endpoint notice (non-fatal):', err);
+    return false;
+  }
+}
+
 export async function sendToSheet(b: Booking): Promise<boolean> {
   if (!CONFIG.sheetWebhookUrl) {
     return false;

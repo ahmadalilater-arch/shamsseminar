@@ -1,7 +1,7 @@
 import React from 'react';
 import { ShieldCheck, BarChart2, FileCheck2, UserCheck2, Sparkles } from 'lucide-react';
 import { motion } from 'motion/react';
-import { CONTENT, Language } from '../content';
+import { CONTENT, Language } from './content';
 
 interface TrustStripProps {
   currentLang: Language;

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { CONFIG } from '../config';
+import { CONFIG } from './config';
 import {
   Booking,
   loadBookings,
   updateBookingStatus,
   formatBookingCode,
-} from '../lib/booking';
-import { exportBookingsCSV } from '../lib/send';
-import { jalali, toPersianDigits } from '../lib/date';
+} from './booking';
+import { exportBookingsCSV } from './send';
+import { jalali, toPersianDigits } from './date';
 import {
   X,
   Lock,

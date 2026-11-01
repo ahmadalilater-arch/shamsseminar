@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { MessageCircle, Calendar } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CONFIG } from '../config';
-import { CONTENT, Language } from '../content';
+import { CONFIG } from './config';
+import { CONTENT, Language } from './content';
 
 interface FloatingControlsProps {
   currentLang: Language;

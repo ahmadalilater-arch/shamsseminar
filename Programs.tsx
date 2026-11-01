@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { CalendarPlus, BookCheck, Clock, Award, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CONTENT, Language } from '../content';
+import { CONTENT, Language } from './content';
 
 interface ProgramsProps {
   currentLang: Language;

@@ -1,7 +1,7 @@
 import React from 'react';
-import { CONFIG } from '../../config';
-import { CONTENT, Language } from '../../content';
-import { toPersianDigits } from '../../lib/date';
+import { CONFIG } from './config';
+import { CONTENT, Language } from './content';
+import { toPersianDigits } from './date';
 import { School, MapPin } from 'lucide-react';
 import { motion } from 'motion/react';
 

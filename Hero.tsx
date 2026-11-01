@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowLeft, Compass, CheckCircle2, Sparkles, Sun, Shield, Award } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CONTENT, Language } from '../content';
+import { CONTENT, Language } from './content';
 
 interface HeroProps {
   currentLang: Language;

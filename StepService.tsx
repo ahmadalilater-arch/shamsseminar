@@ -1,7 +1,7 @@
 import React from 'react';
 import { MessageSquareText, Calendar, Building2, Check } from 'lucide-react';
 import { motion } from 'motion/react';
-import { CONTENT, Language } from '../../content';
+import { CONTENT, Language } from './content';
 
 interface StepServiceProps {
   currentValue: string;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { User, Phone } from 'lucide-react';
-import { CONTENT, Language } from '../../content';
+import { CONTENT, Language } from './content';
 
 interface StepContactProps {
   name: string;
@@ -17,6 +17,7 @@ interface StepContactProps {
   }>) => void;
   errors: Record<string, string>;
   currentLang: Language;
+  onOpenPrivacy?: () => void;
 }
 
 export const StepContact: React.FC<StepContactProps> = ({
@@ -28,6 +29,7 @@ export const StepContact: React.FC<StepContactProps> = ({
   onChange,
   errors,
   currentLang,
+  onOpenPrivacy,
 }) => {
   const t = CONTENT[currentLang];
   const isRtl = currentLang === 'fa';
@@ -80,7 +82,7 @@ export const StepContact: React.FC<StepContactProps> = ({
               dir="ltr"
               value={phone}
               onChange={(e) => onChange({ phone: e.target.value })}
-              placeholder="0784996270"
+              placeholder="07XXXXXXXX"
               className={`w-full px-3.5 py-2.5 rounded-lg border text-xs sm:text-sm bg-white font-mono focus:outline-none focus:ring-1 focus:ring-[#B45309] focus:border-[#B45309] transition-all text-left ${
                 errors.phone ? 'border-red-300 ring-1 ring-red-300' : 'border-[#D5CEBE]'
               }`}
@@ -138,12 +140,23 @@ export const StepContact: React.FC<StepContactProps> = ({
             onChange={(e) => onChange({ consent: e.target.checked })}
             className="w-4 h-4 rounded text-[#B45309] focus:ring-[#B45309] border-[#D5CEBE] mt-0.5 cursor-pointer"
           />
-          <label
-            htmlFor="consentCheckbox"
-            className="text-xs text-[#3A4B60] select-none cursor-pointer leading-relaxed"
-          >
-            {t.booking.step4.consentLabel}
-          </label>
+          <div className="text-xs text-[#3A4B60] leading-relaxed">
+            <label
+              htmlFor="consentCheckbox"
+              className="select-none cursor-pointer"
+            >
+              {t.booking.step4.consentLabel}{' '}
+            </label>
+            {onOpenPrivacy && (
+              <button
+                type="button"
+                onClick={onOpenPrivacy}
+                className="text-[#B45309] hover:underline font-semibold inline cursor-pointer"
+              >
+                ({isRtl ? 'مطالعه پالیسی حریم خصوصی و امنیت' : 'Read Privacy & Security Policy'})
+              </button>
+            )}
+          </div>
         </div>
         {errors.consent && (
           <p className="text-xs text-red-600 font-medium">{errors.consent}</p>

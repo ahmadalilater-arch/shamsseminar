@@ -1,28 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { AnimatedBackground } from './components/AnimatedBackground';
-import { Header } from './components/Header';
-import { Hero } from './components/Hero';
-import { TrustStrip } from './components/TrustStrip';
-import { Why } from './components/Why';
-import { OrbitModel } from './components/OrbitModel';
-import { Audiences } from './components/Audiences';
-import { Programs } from './components/Programs';
-import { Quality } from './components/Quality';
-import { Results } from './components/Results';
-import { Roadmap } from './components/Roadmap';
-import { Team } from './components/Team';
-import { Stepper as BookingStepper } from './components/Booking/Stepper';
-import { Faq } from './components/Faq';
-import { CtaBand } from './components/CtaBand';
-import { Footer } from './components/Footer';
-import { FloatingWhatsApp } from './components/FloatingWhatsApp';
-import { AdminModal } from './components/AdminModal';
+import { AnimatedBackground } from './AnimatedBackground';
+import { Header } from './Header';
+import { Hero } from './Hero';
+import { TrustStrip } from './TrustStrip';
+import { Why } from './Why';
+import { OrbitModel } from './OrbitModel';
+import { Audiences } from './Audiences';
+import { Programs } from './Programs';
+import { Quality } from './Quality';
+import { Results } from './Results';
+import { Roadmap } from './Roadmap';
+import { Team } from './Team';
+import { Stepper as BookingStepper } from './Stepper';
+import { Faq } from './Faq';
+import { CtaBand } from './CtaBand';
+import { Footer } from './Footer';
+import { FloatingWhatsApp } from './FloatingWhatsApp';
+import { AdminModal } from './AdminModal';
+import { PrivacyModal } from './PrivacyModal';
 import { Language } from './content';
 
 export default function App() {
   const [currentLang, setCurrentLang] = useState<Language>('fa');
   const [adminOpen, setAdminOpen] = useState(false);
+  const [privacyOpen, setPrivacyOpen] = useState(false);
   const [preselectedAudience, setPreselectedAudience] = useState<string | undefined>();
   const [preselectedTopic, setPreselectedTopic] = useState<string | undefined>();
 
@@ -132,6 +134,7 @@ export default function App() {
               setPreselectedAudience(undefined);
               setPreselectedTopic(undefined);
             }}
+            onOpenPrivacy={() => setPrivacyOpen(true)}
           />
 
           {/* FAQ */}
@@ -149,6 +152,7 @@ export default function App() {
       <Footer
         currentLang={currentLang}
         onOpenAdmin={() => setAdminOpen(true)}
+        onOpenPrivacy={() => setPrivacyOpen(true)}
         onBookClick={scrollToBooking}
       />
 
@@ -162,6 +166,13 @@ export default function App() {
       <AdminModal
         isOpen={adminOpen}
         onClose={() => setAdminOpen(false)}
+      />
+
+      {/* Privacy Policy Modal */}
+      <PrivacyModal
+        isOpen={privacyOpen}
+        onClose={() => setPrivacyOpen(false)}
+        currentLang={currentLang}
       />
 
     </div>

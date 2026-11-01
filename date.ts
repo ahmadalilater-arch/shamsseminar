@@ -148,3 +148,29 @@ export function toDateISO(date: Date): string {
   const d = String(date.getDate()).padStart(2, '0');
   return `${y}-${m}-${d}`;
 }
+
+/**
+ * Extracts Jalali year, month (1-12), and day (1-31) for a given Date.
+ */
+export function getJalaliParts(date: Date): { year: number; month: number; day: number } {
+  try {
+    const formatter = new Intl.DateTimeFormat('fa-AF-u-ca-persian-nu-latn', {
+      year: 'numeric',
+      month: 'numeric',
+      day: 'numeric',
+      timeZone: 'Asia/Kabul',
+    });
+    const parts = formatter.formatToParts(date);
+    let year = 1400;
+    let month = 1;
+    let day = 1;
+    for (const p of parts) {
+      if (p.type === 'year') year = parseInt(p.value, 10);
+      if (p.type === 'month') month = parseInt(p.value, 10);
+      if (p.type === 'day') day = parseInt(p.value, 10);
+    }
+    return { year, month, day };
+  } catch {
+    return { year: date.getFullYear(), month: date.getMonth() + 1, day: date.getDate() };
+  }
+}

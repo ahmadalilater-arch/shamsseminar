@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Search, Presentation, CheckCircle2, Repeat, Sparkles, ChevronLeft, ChevronRight, Activity } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CONTENT, Language } from '../content';
+import { CONTENT, Language } from './content';
 
 interface OrbitModelProps {
   currentLang: Language;

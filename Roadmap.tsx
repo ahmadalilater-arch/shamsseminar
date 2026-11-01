@@ -1,7 +1,7 @@
 import React from 'react';
 import { MapPin, Navigation, Sparkles, Building, Landmark, Compass } from 'lucide-react';
 import { motion } from 'motion/react';
-import { CONTENT, Language } from '../content';
+import { CONTENT, Language } from './content';
 
 interface RoadmapProps {
   currentLang: Language;

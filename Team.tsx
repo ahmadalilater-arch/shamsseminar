@@ -1,8 +1,8 @@
 import React from 'react';
 import { ShieldCheck, Check, Award, GraduationCap, Sparkles } from 'lucide-react';
 import { motion } from 'motion/react';
-import { CONFIG } from '../config';
-import { CONTENT, Language } from '../content';
+import { CONFIG } from './config';
+import { CONTENT, Language } from './content';
 
 interface TeamProps {
   currentLang: Language;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Calendar } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { SunLogo } from './SunLogo';
-import { CONTENT, Language } from '../content';
+import { CONTENT, Language } from './content';
 
 interface HeaderProps {
   currentLang: Language;

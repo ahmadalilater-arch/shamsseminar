@@ -1,18 +1,20 @@
 import React from 'react';
 import { SunLogo } from './SunLogo';
-import { CONFIG } from '../config';
-import { CONTENT, Language } from '../content';
+import { CONFIG } from './config';
+import { CONTENT, Language } from './content';
 import { Phone, MessageCircle, MapPin, Clock, ShieldCheck, Lock } from 'lucide-react';
 
 interface FooterProps {
   currentLang: Language;
   onOpenAdmin: () => void;
+  onOpenPrivacy?: () => void;
   onBookClick: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
   currentLang,
   onOpenAdmin,
+  onOpenPrivacy,
   onBookClick,
 }) => {
   const t = CONTENT[currentLang];
@@ -129,7 +131,7 @@ export const Footer: React.FC<FooterProps> = ({
                   <Clock className="w-4 h-4" />
                 </div>
                 <span>
-                  {isRtl ? CONFIG.hours : 'Saturday to Thursday, 8:00 AM – 4:00 PM (Fridays closed)'}
+                  {isRtl ? CONFIG.hours : 'Saturday to Thursday, 8:00 AM – 4:00 PM'}
                 </span>
               </div>
             </div>
@@ -141,15 +143,28 @@ export const Footer: React.FC<FooterProps> = ({
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
           <p>{t.footer.allRights}</p>
 
-          <button
-            onClick={onOpenAdmin}
-            type="button"
-            className="inline-flex items-center gap-1.5 text-gray-500 hover:text-amber-400 transition-colors cursor-pointer"
-            title={isRtl ? 'ورود به پنل اداری جهت مشاهده درخواست‌های ثبت‌شده' : 'Access Admin Portal to view bookings'}
-          >
-            <Lock className="w-3.5 h-3.5" />
-            <span>{t.footer.adminLink}</span>
-          </button>
+          <div className="flex items-center gap-4">
+            {onOpenPrivacy && (
+              <button
+                onClick={onOpenPrivacy}
+                type="button"
+                className="inline-flex items-center gap-1 text-gray-400 hover:text-amber-400 transition-colors cursor-pointer"
+              >
+                <ShieldCheck className="w-3.5 h-3.5 text-amber-500" />
+                <span>{isRtl ? 'حریم خصوصی و امنیت' : 'Privacy & Security'}</span>
+              </button>
+            )}
+
+            <button
+              onClick={onOpenAdmin}
+              type="button"
+              className="inline-flex items-center gap-1.5 text-gray-500 hover:text-amber-400 transition-colors cursor-pointer"
+              title={isRtl ? 'ورود به پنل اداری جهت مشاهده درخواست‌های ثبت‌شده' : 'Access Admin Portal to view bookings'}
+            >
+              <Lock className="w-3.5 h-3.5" />
+              <span>{t.footer.adminLink}</span>
+            </button>
+          </div>
         </div>
 
       </div>

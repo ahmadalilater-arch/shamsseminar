@@ -1,7 +1,7 @@
 import React from 'react';
 import { Target, BarChart2, CheckCircle2, TrendingUp, Sparkles } from 'lucide-react';
 import { motion } from 'motion/react';
-import { CONTENT, Language } from '../content';
+import { CONTENT, Language } from './content';
 
 interface ResultsProps {
   currentLang: Language;

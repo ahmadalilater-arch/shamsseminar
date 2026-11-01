@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Booking, formatBookingCode } from '../../lib/booking';
-import { jalali, toPersianDigits } from '../../lib/date';
-import { downloadICS, whatsappLink } from '../../lib/send';
-import { CONTENT, Language } from '../../content';
+import { Booking, formatBookingCode } from './booking';
+import { jalali, toPersianDigits } from './date';
+import { downloadICS, whatsappLink } from './send';
+import { CONTENT, Language } from './content';
 import { Check, Calendar, MessageCircle, RefreshCw, Copy, CheckCheck } from 'lucide-react';
 
 interface SuccessProps {
