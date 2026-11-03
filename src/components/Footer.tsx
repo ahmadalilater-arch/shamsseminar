@@ -129,7 +129,7 @@ export const Footer: React.FC<FooterProps> = ({
                   <Clock className="w-4 h-4" />
                 </div>
                 <span>
-                  {isRtl ? CONFIG.hours : 'Saturday to Thursday, 8:00 AM – 4:00 PM (Fridays closed)'}
+                  {isRtl ? CONFIG.hours : 'Saturday to Thursday, 8:00 AM – 4:00 PM'}
                 </span>
               </div>
             </div>

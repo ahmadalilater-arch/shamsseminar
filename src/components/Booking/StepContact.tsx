@@ -80,7 +80,7 @@ export const StepContact: React.FC<StepContactProps> = ({
               dir="ltr"
               value={phone}
               onChange={(e) => onChange({ phone: e.target.value })}
-              placeholder="0784996270"
+              placeholder="0700000000"
               className={`w-full px-3.5 py-2.5 rounded-lg border text-xs sm:text-sm bg-white font-mono focus:outline-none focus:ring-1 focus:ring-[#B45309] focus:border-[#B45309] transition-all text-left ${
                 errors.phone ? 'border-red-300 ring-1 ring-red-300' : 'border-[#D5CEBE]'
               }`}
